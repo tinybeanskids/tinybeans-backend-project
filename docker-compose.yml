@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mysql_db:
+    image: mysql:5.7
+    container_name: mysql_db
+    restart: on-failure
+    env_file:
+      - .env
+    ports:
+      - 3306:3306
+  app:
+    build: .
+    container_name: tinybeans_backend
+    restart: on-failure
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql_db
