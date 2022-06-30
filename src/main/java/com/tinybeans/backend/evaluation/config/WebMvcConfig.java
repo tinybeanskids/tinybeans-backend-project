@@ -36,8 +36,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
     }
 
     @Override
-    public void configureMessageConverters(ObjectMapper objectMapper, List<HttpMessageConverter<?>> converters) {
-        converters.add(new MappingJackson2HttpMessageConverter(objectMapper));
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.add(new MappingJackson2HttpMessageConverter(objectMapper()));
         converters.add(new StringHttpMessageConverter()); //Need this to convert strings
     }
 

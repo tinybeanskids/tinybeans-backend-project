@@ -15,6 +15,11 @@ This repo is setup using docker containers with docker-compose. To run it proper
 To start the app simply use the command `docker-compose up --rebuild` 
 NOTE: ports 3306 & 8080 must be available for it to run
 
+After startup you can test that Spring Boot is running by going to `http://localhost:8080/test`
+and if opting to use react you can verify its up and running by going to `http://localhost:3000/`
+
+Both projects have `hot reload` capability, saving and/or recompiling a class will cause the docker project to reload
+
 
 ## Assignment
 

@@ -12,9 +12,23 @@ services:
     build: .
     container_name: tinybeans_backend
     restart: on-failure
+    volumes: # If theres an issue with dependencies, it may be because of this line
+      - ".:/app"
     env_file:
       - .env
     ports:
       - 8080:8080
     depends_on:
       - mysql_db
+  react:
+    build: react-app/
+    container_name: tinybeans_react
+    restart: on-failure
+    volumes: # If theres an issue with dependencies, it may be because of this line
+      - "./react-app/src:/app/src"
+    env_file:
+      - .env
+    ports:
+      - 3000:3000
+    depends_on:
+      - app
