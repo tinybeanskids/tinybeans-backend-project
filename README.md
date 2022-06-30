@@ -6,16 +6,18 @@
 Download the contents of this repo, and complete the assignment according to the details below. 
 Once complete, upload publicly to your Git provider of choice (Github/Gitlab/Bitbucket) and share the repository link with the tinybeans team.
 
+NOTE: If you are on windows, make sure to clone the repo using `git clone git@github.com:tinybeanskids/tinybeans-backend-project.git --config core.autocrlf=input` to avoid issues starting up
+
+
 ## How to run it
 This repo is setup using docker containers with docker-compose. To run it properly you will need 
 
 - Docker VM installed on your machine
 - Docker-Compose installed ( available via homebrew)
 
-To start the app simply run the commands 
+To start the app simply run the command 
 ```
-./gradlew clean build docker
-docker-compose up --rebuild
+docker-compose up --build
 ```
 
 NOTE: ports 3306 & 8080 must be available for it to run
